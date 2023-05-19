@@ -1,113 +1,111 @@
-import Image from 'next/image'
+"use client";
+import { useState } from "react";
 
 export default function Home() {
+  const [darkMode, setDarkMode] = useState(false);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <div className={`w-full max-w-screen-xl mx-auto pt-10 px-6 md:px-10 ${darkMode ? "dark" : ""}`}>
+      {/* <header className="w-full relative border- bg-gradient-to-tl from-green-400 to-orange-500 rounded-sm p-px"> */}
+      <header className="w-full relative border border-zinc-400 rounded-lg p-px">
+        <nav className="flex justify-between items-center px-4 py-4">
+          <h3 className="text-xl font-medium">Campfire</h3>
+          <div className="md:flex justify-center hidden">
+            <ul className="flex">
+              <li className="mx-4">
+                <a href="#">Ideas</a>
+              </li>
+              <li className="mx-4">
+                <a href="#">Find a team</a>
+              </li>
+              <li className="mx-4">
+                <a href="#">FAQs</a>
+              </li>
+              <li className="mx-4">
+                <a href="#">Resources</a>
+              </li>
+            </ul>
+          </div>
+          <button className="bg-gradient-to-b from-green-300 to-yellow-300 text-black font-medium py-2 px-6 rounded-md hidden md:block">
+            Connect Wallet
+          </button>
+          <ul className="flex md:hidden">Menu</ul>
+        </nav>
+      </header>
+      <div className="w-full max-w-screen-xl mx-auto">
+        <main className="min-h-[80vh] bg-hero-image w-full">
+          <section className="text-center my-32">
+            <div className=""></div>
+            <h1 className="text-3xl mb-4 font-medium text-white md:text-5xl lg:text-7xl">
+              Join Web3 hackathon,
+              <br /> make an impact.
+            </h1>
+            <p className="text-neutral-300 w-full mx-auto mb-10 text-base md:w-1/2 md:text-lg lg:text-xl lg:w-2/6 lg:leading-8">
+              Sync up with people who share your interests, to develop the decentralized technologies of the future.
+            </p>
+            <button className="bg-yellow-300 text-black capitalize px-10 py-2 rounded-md text-base font-semibold cursor-pointer md:px-12 md:py-3 md:text-base lg:text-lg">
+              Register Today
+            </button>
+          </section>
+        </main>
+        <section className="text-center flex justify-center py-8 min-h-[40vh]">
+          <div className="w-full mx-auto">
+            <h3 className="text-xl font-medium mb-4 md:text-2xl lg:text-3xl">Sponsors</h3>
+            <div className="flex flex-wrap items-center justify-around w-10/12 gap-3 mx-auto">
+              <span className="flex justify-center flex-1">Quotient</span>
+              <span className="flex justify-center flex-1">Catalog</span>
+              <span className="flex justify-center flex-1">Discord</span>
+              <span className="flex justify-center flex-1">Notion</span>
+              <span className="flex justify-center flex-1">SOLANA</span>
+            </div>
+          </div>
+        </section>
+        <section className="w-full py-8 mb-32">
+          <div className="md:flex items-center">
+            <div className="">
+              <div className="flex items-center">
+                <h3 className="text-xl font-medium md:text-2xl lg:text-3xl">Meet IRL</h3>
+                <span className="bg-green-500 rounded-full py-1 px-3 mx-3 text-sm font-semibold text-black">Coming soon</span>
+              </div>
+              <p className="text-neutral-300 w-full my-6 text-base md:w-4/5 md:text-lg lg:text-xl lg:leading-8">
+                Your neighbourhood will soon experience campfire. Visit coworking places across the world to meet hackathon builders, find teammates,
+                and discover campfire development.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2 mb-6 lg:gap-y-4">
+              <span className="flex items-center justify-center bg-zinc-800 px-8 py-2 rounded-full md:px-10">New York</span>
+              <span className="flex items-center justify-center bg-zinc-800 px-8 py-2 rounded-full md:px-10">London</span>
+              <span className="flex items-center justify-center bg-zinc-800 px-8 py-2 rounded-full md:px-10">Abuja</span>
+              <span className="flex items-center justify-center bg-zinc-800 px-8 py-2 rounded-full md:px-10">Berlin</span>
+              <span className="flex items-center justify-center bg-zinc-800 px-8 py-2 rounded-full md:px-10">Accra</span>
+              <span className="flex items-center justify-center bg-zinc-800 px-8 py-2 rounded-full md:px-10">Singapore</span>
+              <span className="flex items-center justify-center bg-zinc-800 px-8 py-2 rounded-full md:px-10">Venice</span>
+              <span className="flex items-center justify-center bg-zinc-800 px-8 py-2 rounded-full md:px-10">Delhi</span>
+              <span className="flex items-center justify-center bg-zinc-800 px-8 py-2 rounded-full md:px-10">Paris</span>
+            </div>
+          </div>
+          <button className="bg-orange-600 py-2 px-10 rounded-md text-black font-medium lg:py-2.5 lg:px-12 lg:text-lg">See all locations</button>
+        </section>
+        <section>
+          <div className="flex flex-col w-full items-center">
+            <h3 className="text-xl font-medium mb-4 md:text-2xl lg:text-3xl">Prizes</h3>
+            <p className="text-neutral-300 w-full mx-auto mb-8 text-center text-base md:w-2/5 md:mx-auto md:text-lg lg:text-xl lg:leading-8">
+              Send out your project now! The top performers will recieve honors, rewards and glory.
+            </p>
+          </div>
+          <div className="w-full flex flex-col flex-nowrap justify-center items-center">
+            <div className="w-full flex">
+              <span className="flex justify-center flex-1">1</span>
+              <span className="flex justify-center flex-1">2</span>
+              <span className="flex justify-center flex-1">3</span>
+            </div>
+            <div className="w-full flex my-4">
+              <span className="flex justify-center flex-1">4</span>
+              <span className="flex justify-center flex-1">5</span>
+              <span className="flex justify-center flex-1">6</span>
+            </div>
+          </div>
+        </section>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    </div>
+  );
 }
